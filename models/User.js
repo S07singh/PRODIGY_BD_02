@@ -1,40 +1,37 @@
-const mongoose = require('mongoose');
-const validator = require('validator');
-const { v4: uuidv4 } = require('uuid');
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/database');
 
-const userSchema = new mongoose.Schema({
-    _id: {
-        type: String,
-        default: uuidv4
+const User = sequelize.define('User', {
+    id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true
     },
     name: {
-        type: String,
-        required: [true, 'Name is required'],
-        trim: true
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            notEmpty: true
+        }
     },
     email: {
-        type: String,
-        required: [true, 'Email is required'],
+        type: DataTypes.STRING,
+        allowNull: false,
         unique: true,
-        trim: true,
-        lowercase: true,
         validate: {
-            validator: validator.isEmail,
-            message: 'Invalid email format'
+            isEmail: true
         }
     },
     age: {
-    type: Number,
-    required: [true, 'Age is required'],
-    validate: {
-        validator: function(value) {
-            return value > 0 && value < 150;
-        },
-        message: 'Age must be between 1 and 149'
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+            min: 1,
+            max: 149
+        }
     }
-}
 }, {
     timestamps: true
 });
 
-module.exports  = mongoose.model('User', userSchema);
+module.exports = User;

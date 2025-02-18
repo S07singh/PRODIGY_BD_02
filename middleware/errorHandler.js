@@ -1,12 +1,14 @@
+const { ValidationError, UniqueConstraintError } = require('sequelize');
+
 const errorHandler = (err, req, res, next) => {
-    if (err.name === 'ValidationError') {
+    if (err instanceof ValidationError) {
         return res.status(400).json({
             status: 'error',
-            message: Object.values(err.errors).map(error => error.message)
+            message: err.errors.map(e => e.message)
         });
     }
     
-    if (err.code === 11000) {
+    if (err instanceof UniqueConstraintError) {
         return res.status(400).json({
             status: 'error',
             message: 'Email already exists'
