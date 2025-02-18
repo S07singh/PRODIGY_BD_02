@@ -7,7 +7,32 @@
 
 A **RESTful API** for **user management** built with **Node.js, Express, and MySQL**, using **Sequelize ORM** for database integration. This API provides **CRUD operations**, error handling, and secure configurations.
 
-![Project Screenshot](screenshot-link)
+---
+
+## 📸 Project Screenshots  
+
+### 🏗️ API Running Successfully and this the database 
+![API Running](https://github.com/user-attachments/assets/fbbacaa7-d188-44ab-9c32-4a670c74234e)  
+
+### 📩 Creating a User  
+![Create User](https://github.com/user-attachments/assets/bd99f2dd-cbbb-4e5d-84f9-62f2b19e519e)  
+
+### 📩 Creating a User   
+![Get Users](https://github.com/user-attachments/assets/1e5e2d23-db51-4f0a-abab-6b7eafe7aacb)  
+
+### 📖 Fetching All Users 
+![Get Single User](https://github.com/user-attachments/assets/4208a423-ec55-4998-ab1f-7755136ed651)  
+
+### 🔍 Fetching a Single User 
+![Update User](https://github.com/user-attachments/assets/d145cf74-7a5c-4ae7-9ae2-7d6a2f5976e7)  
+
+### ✏️ Updating a User   
+![Delete User](https://github.com/user-attachments/assets/dcbfb5b5-d07c-44d2-83df-f718d2ca4a3f)  
+
+### ❌ Deleting a User 
+![Error Handling](https://github.com/user-attachments/assets/1275165f-4eaa-4fcf-af70-67f7be03478a)  
+
+---
 
 ## ⭐ Features
 
